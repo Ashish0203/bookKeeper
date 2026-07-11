@@ -20,4 +20,26 @@ public class McpTools {
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
+
+    @McpTool(name = "get_book_by_id", description = "Get book by id")
+    public Book getBookById(Long id) {
+        return bookService.getBookById(id);
+    }
+
+    @McpTool(name = "create_book", description = "Create book and make entry in db")
+    public Book createBook(Book book) {
+        return bookService.createBook(book);
+    }
+
+    @McpTool(name = "update_book", description = "Update book for a given id")
+    public Book updateBook(Long id, Book book) {
+        return bookService.updateBook(id, book);
+    }
+
+    @McpTool(name = "delete_book", description = "Delete book for a given id")
+    public void deleteBook(Long id) {
+        bookService.deleteBook(id);
+    }
+
+
 }
